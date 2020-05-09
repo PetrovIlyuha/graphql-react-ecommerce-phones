@@ -1,0 +1,64 @@
+{
+  "brews": [
+    {
+      "name": "Apple Iphone 10",
+      "description": "The iPhone X is a smartphone designed, developed, and marketed by Apple Inc. It is the eleventh generation of the iPhone and was announced on September 12, 2017, alongside the iPhone 8 and iPhone 8 Plus, at the Steve Jobs Theater in the Apple Park campus. It was available to pre-order on October 27, 2017 and was released on November 3, 2017.",
+      "price": "459.99"
+    },
+    {
+      "name": "Apple Iphone 11",
+      "description": "TThe iPhone 11 is a smartphone designed, developed, and marketed by Apple Inc. It is the thirteenth generation lower-priced iPhone, succeeding the iPhone XR. It was unveiled on September 10, 2019, alongside the higher-end iPhone 11 Pro flagship at the Steve Jobs Theater in Apple Park, Cupertino by Apple CEO Tim Cook. Pre-orders began on September 13, 2019, and was officially released on September 20, 2019, one day after the official public release of iOS 13.",
+      "price": "689.99"
+    },
+    {
+      "name": "Apple Iphone 11 Pro",
+      "description": "The iPhone 11 Pro and iPhone 11 Pro Max are smartphones designed, developed and marketed by Apple Inc. They are the 13th-generation flagships of the iPhone, succeeding the iPhone XS and iPhone XS Max, respectively. Apple CEO Tim Cook unveiled the devices alongside a lower-end model, the iPhone 11, on September 10, 2019, at the Steve Jobs Theater at Apple Park. Pre-orders began on September 13, 2019, and went on sale on September 20.",
+      "price": "1649.99"
+    },
+    {
+      "name": "Huawei Mate 30 Pro",
+      "description": "The Mate 30 and Mate 30 Pro have a similar design, with an aluminum frame and glass backing, and are available in Black, Space Silver, Cosmic Purple and Emerald Green colours, with artificial leather options also available. Both displays contain notches, with the Mate 30 Pro using a larger tab concealing additional infrared sensors used for a facial recognition system. The Mate 30's cutout for the front camera resembles the P20 and P20 Pro, and is larger than the Mate 20's, in order to accommodate a time-of-flight sensor.",
+      "price": "728.99"
+    },
+    {
+      "name": "Huawei P30 Pro",
+      "description": "Their designs are similar to those of the P20. The P30 Pro has a curved screen, and replaces the traditional earpiece speaker with an `electromagnetic levitation` speaker that vibrates the top of the phone's screen, enabling a narrower bezel. The P30 has IP53 water and dustproofing, while the P30 Pro has IP68, but does not include a headphone jack. Both models utilise the Kirin 980 system-on-chip. The devices feature an in-screen optical fingerprint reader, stated to have improved performance over that of the Mate 20 Pro. In September 2019, Huawei unveiled new `Mystic Blue` and `Misty Lavender` color finishes for the P30 Pro, which carry a two-tone appearance using matte and glossy finishes",
+      "price": "506.99"
+    },
+    {
+      "name": "Huawei P40 Pro",
+      "description": "The P40 series is powered by the HiSilicon Kirin 990 5G processor, meaning that all models will have 5G connectivity standard. Although 5G networks are supported, all models only supports `sub-6` 5G, meaning they are not compatible with ultra-fast millimeter-wave (mmWave) networks. The Kirin 990 5G is assisted by the Mali-G76 MP16 GPU. The P40's display is carried over from the P30, a 6.1` (154.94mm) 19.5:9 1080p (1080 × 2340) OLED with a 60 Hz refresh rate. The P40 Pro and P40 Pro+ use a larger 6.58` (167.13mm) 19.8:9 OLED with an unorthodox resolution (1200 × 2640) and a 90Hz refresh rate, as well as support for HDR10 and DCI-P3.",
+      "price": "945.99"
+    },
+    {
+      "name": "Samsung S10",
+      "description": "Samsung Galaxy S10 is a line of Android-based smartphones manufactured, released and marketed by Samsung Electronics as part of the Samsung Galaxy S series. The Galaxy S10 series is a celebratory series of the 10th anniversary of the Samsung Galaxy S flagship line, its top line of phones next to the Note models. Unveiled during the `Samsung Galaxy Unpacked 2019` press event held on February 20, 2019, the devices started shipping in certain regions such as Australia and the United States on March 6, 2019, then worldwide on March 8, 2019.[5] It is the tenth generation of Samsung's Galaxy S series of smartphones.",
+      "price": "590.99"
+    },
+    {
+      "name": "Samsung S20 Ultra",
+      "description": "The Galaxy S20 series maintains a similar design with the Samsung Galaxy Note 10, with an Infinity-O display (first introduced on the Galaxy S10) containing a circular punch-hole in the top center for the frontal selfie camera. In a departure from past Galaxy S designs, the rear camera array is not centered, but located in the corner with a rectangular protrusion similar to that of the iPhone 11 and the Google Pixel 4. The S20 and S20+ house three or four cameras respectively in the bump, while the S20 Ultra houses four cameras in a larger bump.",
+      "price": "1009.99"
+    },
+    {
+      "name": "Samsung Galazy Z Flip",
+      "description": "The Samsung Galaxy Z Flip is an Android-based foldable smartphone developed by Samsung Electronics. Its existence was first revealed in an advertisement during the 2020 Academy Awards. Unveiled alongside the Galaxy S20 on February 11, 2020, it was released on February 14, 2020. Unlike the Galaxy Fold, the device folds vertically and uses a hybrid glass coating branded as `Infinity Flex Display`. It is available in three colours (Mirror Purple, Mirror Black, and Mirror Gold).",
+      "price": "1351.99"
+    },
+    {
+      "name": "Xiaomi Mi 9T",
+      "description": "Redmi K20 Pro and Redmi K20 (Xiaomi Mi 9T Pro and Xiaomi Mi 9T globally are smartphones introduced by the Xiaomi sub-brand Redmi in an event held in China. A Premium variant for the Pro was later revealed, with the Snapdragon 855+, a new 512 GB/12 GB RAM model, a refined cooling system, and an exclusive finish.",
+      "price": "297.99"
+    },
+    {
+      "name": "Xioami Mi Note 8 Pro",
+      "description": "Xiaomi Redmi Note 8 Pro as a phablet features 6.53 inch display afford you a vivid and different visual experience. 5 cameras, 64.0MP + 8.0MP + 2.0MP + 2.0MP back camera and 20.0MP front camera, you can enjoy images with 2340 x 1080 high resolution. It comes with most of the features we've come to expect from a phablet, including 8GB RAM 128GB ROM storage equipped with MIUI 10 Helio G90T and 4500mAh big capacity battery that you can play games faster.",
+      "price": "220.99"
+    },
+    {
+      "name": "Xiaomi Mi Note 10",
+      "description": "Unveil the New Era of Mobile Photography. Compare to professional photography equipment, like Huawei P30 and OPPO Realme X2 Pro, the Xiaomi Mi Note 10's penta-camera setup with 108-megapixel brings about amazing resolution and gives you an unprecedented, optimal shooting experience.",
+      "price": "452.99"
+    }
+  ]
+}
