@@ -1,28 +1,20 @@
 {
   "brands": [
     {
-      "name": "BearPaw River",
-      "description": "BPR is a microbrewery based in Wasilla, dedicated to making classic hand-crafted beers."
+      "name": "Xiaomi Corporation",
+      "description": "is a Chinese electronics company founded in April 2010 and headquartered in Beijing. Xiaomi makes and invests in smartphones, mobile apps, laptops, bags, earphones, shoes, fitness bands, and many other products.[3] Xiaomi is also the fourth company after Apple, Samsung and Huawei to have self-developed mobile phone chip capabilities."
     },
     {
-      "name": "Goose Island",
-      "description": "Goose Island Brewery is a Chicago brewery that makes a number of IPAs, both seasonal and year-round"
+      "name": "Apple Inc.",
+      "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services. It is considered one of the Big Five technology companies, alongside Amazon, Google, Microsoft and Facebook."
     },
     {
-      "name": "Olentangy River",
-      "description": "ORBC is a newcomer that offers rich lagers and a wide selection of craft beers"
+      "name": "Samsung Electronics Co.",
+      "description": "South Korean multinational electronics company headquartered in Suwon, South Korea.[1] Due to some circular ownership,[4] it is the flagship company of the Samsung chaebol, accounting for 70% of the group's revenue in 2012.[5] Samsung Electronics has assembly plants and sales networks in 80 countries and employs around 308,745 people.[3] It is the world's largest manufacturer of consumer electronics and semiconductors by revenue.[6] As of June 2018, Samsung Electronics' market capitalization stood at US$325.9 billion."
     },
     {
-      "name": "Solera",
-      "description": "Solera Brewery is based out of Parkdale, Oregon and has a passion for creating delicious beers"
-    },
-    {
-      "name": "Southern Tier",
-      "description": "Southern Tier, out of Lakewood, New York, makes a strong line of craft brews"
-    },
-    {
-      "name": "Mt Hood",
-      "description": "Based in the Pacific Northwest, Mt Hood has distinctive ales made with pure glacial water"
+      "name": "Huawei Technologies Co.",
+      "description": "Chinese multinational technology company. It provides telecommunications equipment and sells consumer electronics, smartphones[4] and is headquartered in Shenzhen, Guangdong."
     }
   ]
 }
