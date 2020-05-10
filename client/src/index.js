@@ -5,7 +5,7 @@ import "gestalt/dist/gestalt.css";
 
 import App from "./components/App";
 import SignIn from "./components/SignIn";
-import SignUp from "./components/SingUp";
+import SignUp from "./components/SignUp";
 import Checkout from "./components/Checkout";
 import Navbar from "./components/Navbar";
 
