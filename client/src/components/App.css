@@ -11,5 +11,16 @@ a:visited {
 }
 
 .active {
-  font-style: italic;
+  animation: showActive 0.2s ease-in forwards;
+}
+
+@keyframes showActive {
+  from {
+    border-bottom: none;
+    opacity: 0;
+  }
+  to {
+    border-bottom: 2px solid yellow;
+    opacity: 1;
+  }
 }
