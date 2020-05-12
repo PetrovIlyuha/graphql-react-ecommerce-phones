@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Box, Image, Heading, Mask, Text, Card, Button } from "gestalt";
+import {
+  Box,
+  Image,
+  IconButton,
+  Heading,
+  Mask,
+  Text,
+  Card,
+  Button,
+} from "gestalt";
 import Loader from "./Loader";
+import { calculatePrice, setCart, getCart } from "../utils/index";
 
 import Strapi from "strapi-sdk-javascript/build/main";
 const apiUrl = process.env.API_URL || "http://localhost:1337";
@@ -14,6 +24,12 @@ const Phones = (props) => {
   const [loadingPhones, setLoadingPhones] = useState(true);
 
   const brandId = props.match.params.brandId;
+
+  useEffect(() => {
+    const cartItems = getCart();
+    setCartItems(cartItems);
+  }, []);
+
   useEffect(() => {
     async function fetchPhones() {
       try {
@@ -39,7 +55,6 @@ const Phones = (props) => {
             }`,
           },
         });
-        console.log(response);
         setPhones(response.data.brand.phones);
         setBrand(response.data.brand.name);
         setLoadingPhones(false);
@@ -51,12 +66,42 @@ const Phones = (props) => {
     fetchPhones();
   }, []);
 
+  const addToCart = (phone) => {
+    const alreadyInCart = cartItems.findIndex((item) => item._id === phone._id);
+
+    if (alreadyInCart === -1) {
+      const updatedItems = cartItems.concat({
+        ...phone,
+        quantity: 1,
+      });
+      setCartItems(updatedItems);
+      setCart(updatedItems);
+    } else {
+      const updatedItems = [...cartItems];
+      updatedItems[alreadyInCart].quantity += 1;
+      setCartItems(updatedItems);
+      setCart(updatedItems);
+    }
+  };
+
+  const deleteItemFromCart = (itemToRemoveId) => {
+    const filteredItemsInCart = cartItems.filter(
+      (item) => item._id !== itemToRemoveId
+    );
+    setCartItems(filteredItemsInCart);
+    setCart(filteredItemsInCart);
+  };
   return (
     <Box
       marginTop={4}
       display="flex"
       justifyContent="center"
       alignItems="start"
+      dangerouslySetInlineStyle={{
+        __style: {
+          flexWrap: "wrap-reverse",
+        },
+      }}
     >
       {/* phones section */}
       <Box display="flex" direction="column" alignItems="center">
@@ -128,7 +173,11 @@ const Phones = (props) => {
                     Price: ${phone.price}
                   </Text>
                   <Text size="xl" marginTop={2} color="gray">
-                    <Button color="blue" text="Add To Cart" />
+                    <Button
+                      onClick={() => addToCart(phone)}
+                      color="blue"
+                      text="Add To Cart"
+                    />
                   </Text>
                 </Box>
               </Card>
@@ -138,8 +187,56 @@ const Phones = (props) => {
       </Box>
 
       {/* User's Cart */}
-      <Box marginTop={2} marginLeft={8}>
-        <Mask></Mask>
+      <Box alignSelf="end" marginTop={8} marginLeft={8}>
+        <Mask shape="rounded" wash>
+          <Box
+            display="flex"
+            direction="column"
+            alignItems="center"
+            padding={3}
+          >
+            <Heading align="center" size="sm">
+              Your Cart
+            </Heading>
+            <Text color="gray" italic>
+              {cartItems.length} items selected
+            </Text>
+            {/* Cart Items */}
+            {cartItems.map((item) => (
+              <Box key={item._id} display="flex" alignItems="center">
+                <Text>
+                  {item.model} x {item.quantity} - $
+                  {(item.quantity * item.price).toFixed(2)}
+                </Text>
+                <IconButton
+                  accessibilityLabel="Delete item"
+                  icon="cancel"
+                  size="sm"
+                  iconColor="red"
+                  onClick={() => deleteItemFromCart(item._id)}
+                />
+              </Box>
+            ))}
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              direction="column"
+            >
+              <Box margin={2}>
+                {cartItems.length === 0 && (
+                  <Text color="red">Please select some Items</Text>
+                )}
+              </Box>
+              <Text size="lg">
+                Total: ${calculatePrice(cartItems).toFixed(2)}
+              </Text>
+              <Text>
+                <Link to="/checkout">Checkout</Link>
+              </Text>
+            </Box>
+          </Box>
+        </Mask>
       </Box>
       <Loader show={loadingPhones} />
     </Box>
