@@ -15,7 +15,7 @@ const Loader = ({ show }) => {
           },
         }}
       >
-        <GridLoader color="grey" size={30} margin={3} />
+        <GridLoader color="grey" size={30} margin="3px" />
       </Box>
     )
   );
