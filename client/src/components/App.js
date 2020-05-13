@@ -22,6 +22,7 @@ const App = () => {
   const [brands, setBrands] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loadingBrands, setLoadingBrands] = useState(true);
+
   useEffect(() => {
     async function fetchBrands() {
       try {
