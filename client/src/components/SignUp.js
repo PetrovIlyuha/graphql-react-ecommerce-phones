@@ -39,7 +39,6 @@ const SignUp = ({ history }) => {
       const response = await strapi.register(username, email, password);
       setUserState({ ...userState, loading: false });
       setToken(response.jwt);
-      console.log(response);
       redirectUser("/");
     } catch (err) {
       setUserState({ ...userState, loading: false });

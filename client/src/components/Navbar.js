@@ -59,9 +59,15 @@ const Navbar = ({ history }) => {
           </NavLink>
         </Box>
       ) : (
-        <Box display="flex" direction="row" width={250} justifyContent="around">
+        <Box
+          display="flex"
+          direction="row"
+          width={250}
+          justifyContent="around"
+          alignItems="center"
+        >
           <NavLink activeClassName="active" to="/checkout">
-            <Text size="xl" color="white" marginRight={4}>
+            <Text size="xl" color="white">
               Checkout
             </Text>
           </NavLink>
