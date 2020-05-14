@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { getToken } from "./utils";
 import "gestalt/dist/gestalt.css";
 
 import App from "./components/App";
@@ -10,6 +16,23 @@ import Phones from "./components/Phones";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      getToken() !== null ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/signin",
+            state: { from: props.location },
+          }}
+        />
+      )
+    }
+  />
+);
 const Root = () => (
   <Router>
     <React.Fragment>
@@ -18,7 +41,7 @@ const Root = () => (
         <Route exact path="/" component={App} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/checkout" component={Checkout} />
+        <PrivateRoute path="/checkout" component={Checkout} />
         <Route path="/:brandId" component={Phones} />
       </Switch>
     </React.Fragment>
