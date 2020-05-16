@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ConfirmationModal from "./ConfirmModal";
 import { Container, Box, Heading, Text, TextField } from "gestalt";
+import { withRouter } from "react-router-dom";
 import {
   Elements,
   StripeProvider,
@@ -8,10 +9,18 @@ import {
   injectStripe,
 } from "react-stripe-elements";
 import ToastMessage from "./ToastMessage";
-import { getCart, calculatePrice } from "../utils/index";
+import {
+  getCart,
+  calculateAmount,
+  calculatePrice,
+  clearCart,
+} from "../utils/index";
 
-const Checkout = ({ stripe }) => {
-  console.log(stripe);
+import Strapi from "strapi-sdk-javascript/build/main";
+const apiUrl = process.env.API_URL || "http://localhost:1337";
+const strapi = new Strapi(apiUrl);
+
+const Checkout = ({ history, stripe }) => {
   const [checkout, setCheckout] = useState({
     toast: false,
     message: "",
@@ -51,14 +60,38 @@ const Checkout = ({ stripe }) => {
     setCheckout({ ...checkout, modal: true });
   };
 
-  const handleSubmitOrder = () => {};
+  const handleSubmitOrder = async () => {
+    const { cartItems, city, address, postalCode } = checkout;
+    setCheckout({ ...checkout, orderProcessing: true });
+    const amount = calculateAmount(cartItems);
+    let token;
+    try {
+      const response = await stripe.createToken();
+      token = response.token.id;
+      await strapi.createEntry("orders", {
+        amount,
+        phones: cartItems,
+        city,
+        postalCode,
+        address,
+        token,
+      });
+      setCheckout({ ...checkout, orderProcessing: false, modal: false });
+      clearCart();
+      showToast("Your order has been successfully submitted!", true);
+    } catch (err) {
+      setCheckout({ ...checkout, orderProcessing: false, modal: false });
+      showToast(err.message);
+    }
+  };
 
   const closeModal = () => setCheckout({ ...checkout, modal: false });
 
-  const showToast = (message) => {
+  const showToast = (message, redirect = false) => {
     setCheckout({ ...checkout, toast: true, message });
     setTimeout(() => {
       setCheckout({ ...checkout, toast: false, message: "" });
+      redirect && history.push("/");
     }, 2000);
   };
   const { toast, message, cartItems, orderProcessing, modal } = checkout;
@@ -138,7 +171,7 @@ const Checkout = ({ stripe }) => {
               <Box marginTop={2}>
                 <TextField
                   id="postalCode"
-                  type="number"
+                  type="text"
                   name="postalCode"
                   placeholder="Postal Code"
                   onChange={handleChange}
@@ -191,7 +224,7 @@ const Checkout = ({ stripe }) => {
   );
 };
 
-const CheckoutForm = injectStripe(Checkout);
+const CheckoutForm = withRouter(injectStripe(Checkout));
 
 const StripeCheckout = () => (
   <StripeProvider apiKey="pk_test_HK4R5Dst2sfcx7o69v2zbBpA00isZSH2xt">
