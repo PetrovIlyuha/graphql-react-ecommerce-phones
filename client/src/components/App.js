@@ -7,7 +7,6 @@ import {
   Icon,
   Image,
   SearchField,
-  Spinner,
   Text,
 } from "gestalt";
 import { Link } from "react-router-dom";
