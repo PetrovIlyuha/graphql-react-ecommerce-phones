@@ -34,7 +34,7 @@ const SignIn = ({ history }) => {
     // Sign up user
     try {
       setUserState({ ...userState, loading: true });
-      const { username, email, password } = userState;
+      const { username, password } = userState;
       const response = await strapi.login(username, password);
       setUserState({ ...userState, loading: false });
       setToken(response.jwt);
